@@ -7,30 +7,31 @@ permalink: /rpg/game
 
 ---
 
-## Basic Game: Desert Adventure - RPG Game
+## Basic Game: Desert Adventure
 
 {% capture challenge1 %}
 Run the basic desert adventure game. Use WASD or arrow keys to move Chill Guy around the desert. Walk up to R2D2 to trigger a mini-game!
 {% endcapture %}
 
 {% capture code1 %}
-import GameEnvBackground from '/assets/js/BetterGameEngine/essentials/GameEnvBackground.js';
-import Player from '/assets/js/BetterGameEngine/gameObjects/Player.js';
-import Npc from '/assets/js/BetterGameEngine/gameObjects/Npc.js';
-import Barrier from '/assets/js/adventureGame/Barrier.js';
+iimport GameControl from '/assets/js/adventureGame/GameEngine/GameControl.js';
+import GameEnvBackground from '/assets/js/adventureGame/GameEngine/GameEnvBackground.js';
+import Player from '/assets/js/adventureGame/GameEngine/Player.js';
+import Npc from '/assets/js/adventureGame/GameEngine/Npc.js';
+import Barrier from '/assets/js/adventureGame/GameEngine/Barrier.js';
 
 class CustomLevel {
-            constructor(gameEnv) {
-            const path = gameEnv.path;
-            const width = gameEnv.innerWidth;
-            const height = gameEnv.innerHeight;
+    constructor(gameEnv) {
+        const path = gameEnv.path;
+        const width = gameEnv.innerWidth;
+        const height = gameEnv.innerHeight;
         const bgData = {
             name: 'custom_bg',
-            src: path + "/images/gamebuilder/alien_planet.jpg",
-            pixels: { height: 600, width: 1000 }
+            src: path + "/images/gamify/desert.png",
+            pixels: { height: 580, width: 1038 }
         };
         const playerData = {
-            id: 'Bob',
+            id: 'Hero',
             src: path + "/images/gamify/chillguy.png",
             SCALE_FACTOR: 5,
             STEP_FACTOR: 1000,
@@ -51,16 +52,16 @@ class CustomLevel {
         };
         const npcData1 = {
             id: 'NPC',
-            greeting: 'Yo wassup!',
-            src: path + "/images/gamify/chillguy.png",
+            greeting: 'hi',
+            src: path + "/images/gamify/r2_idle.png",
             SCALE_FACTOR: 8,
             ANIMATION_RATE: 50,
             INIT_POSITION: { x: 500, y: 300 },
-            pixels: { height: 512, width: 384 },
-            orientation: { rows: 4, columns: 3 },
+            pixels: { height: 223, width: 505 },
+            orientation: { rows: 1, columns: 3 },
             down: { row: 0, start: 0, columns: 3 },
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-            dialogues: ['Yo wassup!'],
+            dialogues: ['hi'],
             reaction: function() { if (this.dialogueSystem) { this.showReactionDialogue(); } else { console.log(this.greeting); } },
             interact: function() { if (this.dialogueSystem) { this.showRandomDialogue(); } }
         };
@@ -73,6 +74,7 @@ class CustomLevel {
     }
 }
 
+export { GameControl };
 export const gameLevelClasses = [CustomLevel];
 {% endcapture %}
 
