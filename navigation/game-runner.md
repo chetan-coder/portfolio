@@ -7,7 +7,7 @@ permalink: /rpg/game
 
 ---
 
-## Basic Game: Desert Adventure - RPG Game
+## Basic Game: Desert Adventure - RPG Gamebuilder
 
 {% capture challenge1 %}
 Run the basic desert adventure game. Use WASD or arrow keys to move Chill Guy around the desert. Walk up to R2D2 to trigger a mini-game!
