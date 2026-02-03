@@ -52,7 +52,7 @@ class CustomLevel {
         };
         const npcData1 = {
             id: 'NPC',
-            greeting: 'hi',
+            greeting: 'Hello!',
             src: path + "/images/gamify/r2_idle.png",
             SCALE_FACTOR: 8,
             ANIMATION_RATE: 50,
