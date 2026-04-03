@@ -170,8 +170,8 @@ permalink: /cs111-blog/
 You can play the game right below:
 
 <iframe src="https://phantom-deploy.github.io/portfolio/gamify/gategame" 
-        width="800" 
-        height="600" 
+        width="1000" 
+        height="800" 
         frameborder="0" 
         allowfullscreen>
 </iframe>
